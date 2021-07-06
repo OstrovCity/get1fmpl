@@ -1,4 +1,4 @@
-### ╩ръ шёяюы№чютрЄ№:
+### Как использовать:
 
 ```bash
 pip3 install -r requirements.txt
