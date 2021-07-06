@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 from io import open as io_open
 import sys
 import getopt
@@ -45,6 +47,7 @@ def main():
 	resp = requests.get(CHANNELS_API_URL)
 	channels = resp.json()
 	channels_sorted = sorted(channels, key=lambda x: x['StationName'].lower())
+	print(out_file)
 	with io_open(out_file, 'w', encoding='utf8') as f:
 		f.write("#EXTM3U\n")
 		f.write("#PLAYLIST:1.fm\n")
