@@ -1,11 +1,15 @@
 ### Как скачать
-'''bash
-git clone https://github.com/OstrovCity/vkmd.py
-'''
+```bash
+git clone https://github.com/OstrovCity/get1fmpl.git
+```
 
-### Как использовать:
-
+### Перед первым использованием
 ```bash
 pip3 install -r requirements.txt
-./main.py [-p] [-f OutputFileName.m3u]
+chmod 755 get1fmpl.py 
+```
+
+### Как использовать:
+```bash
+./get1fmpl.py [-p] [-f OutputFileName.m3u]
 ```
