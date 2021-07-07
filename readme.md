@@ -2,5 +2,5 @@
 
 ```bash
 pip3 install -r requirements.txt
-./src/main.py
+./main.py [-p] [-f OutputFileName.m3u]
 ```
