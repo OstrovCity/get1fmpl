@@ -7,7 +7,7 @@ import requests
 
 CHANNELS_API_URL = 'http://androidapp.1.fm/stlistandroid'
 premium = False
-out_file = '1fm.m3u'
+out_file = '1FM.m3u'
 
 def parse_cl(argv):
 
@@ -36,18 +36,15 @@ def main():
 
 	if premium:
 		ICECAST_URL = 'http://prmstrm.1.fm:8000/'
-		quality = 'premium'
 	else:
 		ICECAST_URL = 'http://strm112.1.fm/'
-		quality = 'standart'   
 
-	print('quality ' + quality)
-	print('file    ' + out_file)
+	print('premium ', premium)
+	print('file    ', out_file)
 
 	resp = requests.get(CHANNELS_API_URL)
 	channels = resp.json()
 	channels_sorted = sorted(channels, key=lambda x: x['StationName'].lower())
-	print(out_file)
 	with io_open(out_file, 'w', encoding='utf8') as f:
 		f.write("#EXTM3U\n")
 		f.write("#PLAYLIST:1.fm\n")
@@ -57,7 +54,7 @@ def main():
 			name = f"{station_name} - {station_desc}"
 			f.write(f"#EXTINF:-1,{name[:256]}\n")
 			f.write(f"{ICECAST_URL}{channel['Stream128k'].split('/')[-1].split('_mobile_mp3')[0]}\n")
-	print(len(channels_sorted))
+	print('channels', len(channels_sorted))
 
 if __name__ == '__main__':
 	main()
