@@ -11,7 +11,7 @@ out_file = '1FM.m3u'
 
 def parse_cl(argv):
 
-	help_str = sys.argv[0] + ' -p -f <output_filename>'
+	help_str = sys.argv[0] + ' [-p] [-f OutputFileName.m3u]'
 	try:
 		opts, args = getopt.getopt(argv, 'hpf:', ['cl_file='])
 	except getopt.GetOptError:
